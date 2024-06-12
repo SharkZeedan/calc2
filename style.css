@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --button-background: #f0f0f0;
+  --button-color: #000000;
+  --operator-background: #ff9500;
+  --operator-color: #ffffff;
+  --clear-background: #ff3b30;
+  --clear-color: #ffffff;
+  --screen-background: #222222;
+  --screen-color: #ffffff;
+}
+
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --button-background: #333333;
+  --button-color: #ffffff;
+  --operator-background: #ff9500;
+  --operator-color: #ffffff;
+  --clear-background: #ff3b30;
+  --clear-color: #ffffff;
+  --screen-background: #000000;
+  --screen-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+  text-align: center;
+  margin: 20px;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.screen {
+  grid-column: span 4;
+  background-color: var(--screen-background);
+  color: var(--screen-color);
+  font-size: 2em;
+  text-align: right;
+  padding: 10px;
+}
+
+.btn {
+  background-color: var(--button-background);
+  border: 1px solid #ccc;
+  font-size: 1.5em;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--button-color);
+}
+
+.btn.operator {
+  background-color: var(--operator-background);
+  color: var(--operator-color);
+}
+
+.btn.clear {
+  background-color: var(--clear-background);
+  color: var(--clear-color);
+  grid-column: span 4;
+}
